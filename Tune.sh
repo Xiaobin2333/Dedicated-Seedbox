@@ -3,7 +3,7 @@
 tput sgr0; clear
 
 ## Load text color settings
-source <(wget -qO- https://raw.githubusercontent.com/jerry048/Seedbox-Components/main/Miscellaneous/tput.sh)
+source <(wget -qO- https://raw.githubusercontent.com/Xiaobin2333/Seedbox-Components/main/Miscellaneous/tput.sh)
 
 ## Check Root Privilege
 if [ $(id -u) -ne 0 ]; then 
@@ -13,13 +13,13 @@ fi
 
 ## Check Linux Distro
 distro_codename="$(source /etc/os-release && printf "%s" "${VERSION_CODENAME}")"
-if [[ $distro_codename != buster ]] && [[ $distro_codename != bullseye ]] ; then
-	warn_1; echo "Only Debian 10/11 is supported"; normal_4
-	exit 1
+if [[ $distro_codename != buster ]] && [[ $distro_codename != bullseye ]] && [[ $distro_codename != focal ]] && [[ $distro_codename != jammy ]]; then
+    warn_1; echo "Only Debian 10/11 and Ubuntu 20.04/22.04 is supported"; normal_4
+    exit 1
 fi
 
 while true; do
-    source <(wget -qO- https://raw.githubusercontent.com/jerry048/Seedbox-Components/main/tweaking.sh)
+    source <(wget -qO- https://raw.githubusercontent.com/Xiaobin2333/Seedbox-Components/main/tweaking.sh)
     normal_3; options=("Deluge Tuning" "Tweaked BBR Install" "System Tuning" "Configure Boot Script")
     select opt in "${options[@]}"
     do
@@ -39,7 +39,7 @@ while true; do
                 CPU_Tweaking; NIC_Tweaking; Network_Other_Tweaking; Scheduler_Tweaking; kernel_Tweaking; break
                 ;;
             "Configure Boot Script")
-                source <(wget -qO- https://raw.githubusercontent.com/jerry048/Seedbox-Components/main/Miscellaneous/boot-script.sh)
+                source <(wget -qO- https://raw.githubusercontent.com/Xiaobin2333/Seedbox-Components/main/Miscellaneous/boot-script.sh)
                 boot_script; break
                 ;;
             *) warn_1; echo "Please choose a valid action";;

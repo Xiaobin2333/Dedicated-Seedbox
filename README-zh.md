@@ -7,11 +7,11 @@
 我沒有時間管理此腳本，有什麼問題請自己解決啦~
 ## 用法
 ### Install.sh
-`bash <(wget -qO- https://raw.githubusercontent.com/jerry048/Dedicated-Seedbox/main/Install.sh) <用戶名稱> <用戶密碼> <緩存大小(單位:GiB)>`
+`bash <(wget -qO- https://raw.githubusercontent.com/Xiaobin2333/Dedicated-Seedbox/main/Install.sh) <用戶名稱> <用戶密碼> <緩存大小(單位:GiB)>`
 
 ### Tuning.sh 假如你已經安裝了盒子環境 (有機會導致bug，請小心使用)
 
-`bash <(wget -qO- https://raw.githubusercontent.com/jerry048/Dedicated-Seedbox/main/Tune.sh)`
+`bash <(wget -qO- https://raw.githubusercontent.com/Xiaobin2333/Dedicated-Seedbox/main/Tune.sh)`
 ## 功能
 ### Install.sh
 ###### 1. 安裝盒子環境
