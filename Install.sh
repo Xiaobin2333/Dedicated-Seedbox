@@ -27,8 +27,8 @@ fi
 
 ## Check Linux Distro
 distro_codename="$(source /etc/os-release && printf "%s" "${VERSION_CODENAME}")"
-if [[ $distro_codename != buster ]] && [[ $distro_codename != bullseye ]] && [[ $distro_codename != focal ]] && [[ $distro_codename != jammy ]]; then
-    warn_1; echo "Only Debian 10/11 and Ubuntu 20.04/22.04 is supported"; normal_4
+if [[ $distro_codename != buster ]] && [[ $distro_codename != bullseye ]] && [[ $distro_codename != focal ]] && [[ $distro_codename != jammy ]] && [[ $distro_codename != bionic ]] && [[ $distro_codename != stretch ]]; then
+    warn_1; echo "Only Debian 9/10/11 and Ubuntu 18/20/22 is supported"; normal_4
     exit 1
 fi
 
