@@ -3,7 +3,7 @@
 tput sgr0; clear
 
 ## Load text color settings
-source <(wget -qO- https://raw.githubusercontent.com/Xiaobin2333/Seedbox-Components/main/Miscellaneous/tput.sh)
+source <(wget -qO- https://raw.githubusercontent.com/Xiaobin2333/Seedbox-Components/test/Miscellaneous/tput.sh)
 
 ## Allow user to decide whether they would like to install a component or not
 function Decision {
@@ -27,18 +27,18 @@ fi
 
 ## Check Linux Distro
 distro_codename="$(source /etc/os-release && printf "%s" "${VERSION_CODENAME}")"
-if [[ $distro_codename != buster ]] && [[ $distro_codename != bullseye ]] && [[ $distro_codename != focal ]] && [[ $distro_codename != jammy ]]; then
-    warn_1; echo "Only Debian 10/11 and Ubuntu 20.04/22.04 is supported"; normal_4
-    exit 1
-fi
+# if [[ $distro_codename != buster ]] && [[ $distro_codename != bullseye ]] && [[ $distro_codename != focal ]] && [[ $distro_codename != jammy ]]; then
+#     warn_1; echo "Only Debian 10/11 and Ubuntu 20.04/22.04 is supported"; normal_4
+#     exit 1
+# fi
 
 
 ## Check System Architecture
 ARCH=$(uname -m)
-if [[ $ARCH != x86_64 ]] && [[ $ARCH != aarch64 ]]; then
-    warn_1; echo "Only X86_64/Aarch64 is supported"; normal_4
-    exit 1
-fi
+# if [[ $ARCH != x86_64 ]] && [[ $ARCH != aarch64 ]]; then
+#     warn_1; echo "Only X86_64/Aarch64 is supported"; normal_4
+#     exit 1
+# fi
 
 
 ## Check Virtual Environment since part of the script might not work on virtual machine
@@ -93,7 +93,7 @@ normal_2
 ## Install Seedbox Environment
 tput sgr0; clear
 normal_1; echo "Start Installing Seedbox Environment"; warn_2
-source <(wget -qO- https://raw.githubusercontent.com/Xiaobin2333/Seedbox-Components/main/seedbox_installation.sh)
+source <(wget -qO- https://raw.githubusercontent.com/Xiaobin2333/Seedbox-Components/test/seedbox_installation.sh)
 Update
 if [ "$AUTO" = "y" ]; then
     qBittorrent
@@ -107,7 +107,7 @@ fi
 ## Tweaking
 tput sgr0; clear
 normal_1; echo "Start Doing System Tweak"; warn_2
-source <(wget -qO- https://raw.githubusercontent.com/Xiaobin2333/Seedbox-Components/main/tweaking.sh)
+source <(wget -qO- https://raw.githubusercontent.com/Xiaobin2333/Seedbox-Components/test/tweaking.sh)
 CPU_Tweaking
 NIC_Tweaking
 Network_Other_Tweaking
@@ -123,7 +123,7 @@ fi
 ## Configue Boot Script
 tput sgr0; clear
 normal_1; echo "Start Configuing Boot Script"
-source <(wget -qO- https://raw.githubusercontent.com/Xiaobin2333/Seedbox-Components/main/Miscellaneous/boot-script.sh)
+source <(wget -qO- https://raw.githubusercontent.com/Xiaobin2333/Seedbox-Components/test/Miscellaneous/boot-script.sh)
 boot_script
 tput sgr0; clear
 
